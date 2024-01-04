@@ -135,7 +135,6 @@ public class Step3 {
 //        int c = scanner.nextInt();
 //        System.out.println( a >=b && a>=c ? a : b>=a && b>=c ? b : c);
 
-
     }
 }
 /*
