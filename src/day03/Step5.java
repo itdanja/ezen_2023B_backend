@@ -6,8 +6,8 @@ public class Step5 { // class s
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         //(송아)문제1 : 점수를 입력받아 점수가 90점 이상이면 '합격' 아니면 '불합격' 출력 하시오.
-        /*int Q1 = scanner.nextInt();
-
+        /*
+        int Q1 = scanner.nextInt();
         if(Q1 >= 90){
             System.out.println("\' 합격\'");
         }else {
@@ -21,12 +21,8 @@ public class Step5 { // class s
             else if(point >= 70){ System.out.println("c등급");}
             else{System.out.println("그외 재시험");}
 
-        /*   문제4 : 가위바위보 게임 구현하기.
-                - 가위가 '0' 이고 바위가 '1' 이고 보가 '2' 일때 플레이어1와 플레이어2 가 있습니다.
-                - 승리자 판단과 무승부 경우의수를 출력하시오.
-   	[입력 조건] 플레이어1 과 플레이어2 에게 각각 입력을 받습니다.
-  	[출력 조건] 플레이어1 이기면 ' 플레이어1 승리 ', 플레이어2 이기면 ' 플레이어2 승리 ' 무승부 이면 '무승부' 출력 하시오.*/
-     /*   System.out.print("플레이어1 :");
+        /* 문제4
+        /*   System.out.print("플레이어1 :");
         int 플레이어1 = scanner.nextInt();
         System.out.print("플레이어2 :");
         int 플레이어2 = scanner.nextInt();
@@ -39,14 +35,8 @@ public class Step5 { // class s
             System.out.println("플레이어2 승리");
         }*/
 
-//        (승택)문제5 : 윤년/평년 판단하기
-//                [ 입력조건 ] 하나의 연도를 입력 받습니다.
-//	[ 윤년/평년 조건 ]
-//        -연수가 4로 나누어 떨어지는 해는 윤년으로 한다.
-//        -연수가 4, 100으로 나누어 떨어지는 해는 평년으로 한다.
-//        -연수가 4, 100, 400으로 나누어 떨어지는 해는 윤년으로 둔다.
-//	[ 출력조건] '입력한OOOO년 은' 윤년 입니다.  혹은 평년 입니다 로 출력하시오.
 
+//        (승택)문제5 : 윤년/평년 판단하기
   /*      System.out.println("연도 입력");
         int year = scanner.nextInt();
 
@@ -60,30 +50,21 @@ public class Step5 { // class s
             System.out.println("입력한 " + year + "년은 윤년입니다." );
         }*/
 
+
     /*    (승호)문제8 : 당첨번호 개수  찾기
-        [ 선언 변수 조건 ] int 공1 = 14 ; int 공2 = 21 ; int 공3 = 9;
-	    [ 입력 조건 ] 세개의 정수를 입력받아 각 변수에 저장하시오.
-	    [ 출력 조건 ] 입력받은 세 정수 중에서 공1~공3 까지 동일한 번호 가 몇개 인지 출력하시오.*/
+    //        int 공1 = 14 ; int 공2 = 21 ; int 공3 = 9;
+    //        int a = scanner.nextInt();
+    //        int b = scanner.nextInt();
+    //        int c = scanner.nextInt();
+    //
+    //        int result = 0;
+    //        if(a == 공1 ||  a == 공2 || a == 공3){result++;}
+    //        if(b == 공1 ||  b == 공2 || b == 공3){result++;}
+    //        if(c == 공1 ||  c == 공2 || c == 공3){result++;}
+    //        System.out.println("result = " + result);
 
-//        int 공1 = 14 ; int 공2 = 21 ; int 공3 = 9;
-//        int a = scanner.nextInt();
-//        int b = scanner.nextInt();
-//        int c = scanner.nextInt();
-//
-//        int result = 0;
-//        if(a == 공1 ||  a == 공2 || a == 공3){result++;}
-//        if(b == 공1 ||  b == 공2 || b == 공3){result++;}
-//        if(c == 공1 ||  c == 공2 || c == 공3){result++;}
-//        System.out.println("result = " + result);
-
-
-        
-
-    }
-} // class e
 
 /*
-
 
 
 (준영)문제2 : 점수를 입력받아 점수가 90점 이상이면 'A등급', 80점 이상이면 'B등급', 70점 이상이면 'C등급', 그외 '재시험' 으로 출력 하시오.
@@ -123,3 +104,5 @@ public class Step5 { // class s
 
  */
 
+    }
+} // class e
