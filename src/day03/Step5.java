@@ -1,5 +1,6 @@
 package day03;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class Step5 { // class s
