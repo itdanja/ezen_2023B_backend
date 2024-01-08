@@ -2,7 +2,7 @@ package day05; // 패키지 : 클래스가 위치한 폴더 경로
 
 import java.util.Scanner;
 
-public class Step01 { // 클래스 : 모든 자바 코드는 클래스 안에서 작성
+public class Step1_방문록_변수버전 { // 클래스 : 모든 자바 코드는 클래스 안에서 작성
     public static void main(String[] args) { // 메인함수 : 자바 코드 실행 진입점( 스레드 포함 )
 
         // 3-1. 입력객체 생성
