@@ -40,7 +40,7 @@ public class Step1_방문록_변수버전 { // 클래스 : 모든 자바 코드�
             else if( ch == 2 ){
                 // 입력 : 삭제할 방문록의 위치 입력
                 System.out.print("방문록 삭제 위치 : 1. 2. 3. : ");      int no = scanner.nextInt();
-                // 입력[ 비밀번호 ]
+                // 입력 : 유효성검사를 위한 비밀번호 입력받기
                 System.out.print("방문록 비밀번호 : ");
                 int password = scanner.nextInt();
                 // [ if중첩] 초기화 : 위치와 비밀번호 일치에 따른 각 변수를 처음값으로 대입
