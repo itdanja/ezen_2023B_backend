@@ -79,3 +79,36 @@
             예) 총 이용객 : 3명   /   평균 : 32분
     과제4 : 첫번째 계산후 'c' 버튼을 입력할때까지 추가 연산을 진행 합니다.
             예) 3+3-2-4
+
+
+4.
+
+- 각 아래 변수들을 배열변수로 변환 하시오.
+[1조]
+    String 플레이어 = 입력값;	String 컴퓨터 = 난수.
+    int 플레이어승리수 = 0;	int 컴퓨터승리수 = 0
+    =============
+    String[] 플레이어 = new String[2];
+    int[] 승리수  = new int[2];
+[2조]
+    String 층1 = "";		String 층2 = "";	 	String 층3 ="";
+    String 층1시 = "";		String 층2시 = "";		String 층3시 = "";
+    String 층1분 = "";		String 층2분 = "";		String 층3분 = "";
+    =============
+    String[] 층 = new String[3];
+    String[] 시  = new String[3];
+    String[] 분  = new String[3];
+[3조]
+    String 좌석1 = "";		String 좌석2= "";	 	String 좌석3="";
+    String 좌석1시 = "";		String 좌석2시 = "";		String 좌석3시 = "";
+    String 좌석1분 = "";		String 좌석2분 = "";		String 좌석3분 = "";
+    =============
+    String[] 좌석 = new String[3];
+    String[] 시  = new String[3];
+    String[] 분  = new String[3];
+[4조]
+    String 피연산자1 = "";	String 피연산자2 = "";	String 연산자 = ""
+    ============
+    String[] 연산자 = new String[3];
+
+

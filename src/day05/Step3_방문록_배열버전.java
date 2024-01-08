@@ -42,13 +42,13 @@ public class Step3_방문록_배열버전 { // class s
             }
             else if( ch == 2 ){
                 // 8-1 입력 : 삭제할 방문록의 위치(인덱스) 입력
-                System.out.println("방문록 삭제 위치 : 1. 2. 3. : ");
+                System.out.print("방문록 삭제 위치 : 1. 2. 3. : ");
                 int no = scanner.nextInt();
                 // 8-2 입력 : 유효성검사를 위한 비밀번호 입력받기
-                System.out.println("방문록 비밀번호 : ");
+                System.out.print("방문록 비밀번호 : ");
                 int password = scanner.nextInt();
                 // 8-3 초기화
-                // 만약에 인덱스가 존재하고. 선택한 방문록의 패스워드 와 방금 입력한 패스워드와 같으면.
+                // 만약에 입력한 인덱스가 존재하고. 해당 방문록의 패스워드 와 방금 입력한 패스워드와 같으면.
                 if( (no >= 0 || no <= 내용배열.length) && 비밀번호배열[ no-1 ] == password ){
                     // 배열의 항목/요소의 자리/길이 삭제할수 없으므로 초기값으로 대입.
                     내용배열[no-1] = null;  작성자배열[no-1] = null;  비밀번호배열[no-1] = 0;
