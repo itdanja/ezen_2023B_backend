@@ -1,7 +1,7 @@
 package day10;
 
 public class Car {
-    // 멤버
+    // 클래스 멤버
     // 1. 필드
     int gas;
     // 2. 생성자 : 객체 생성시 new

@@ -86,7 +86,6 @@ public class BankApplication { // 실행클래스
             else if( ch == 3 ){ 예금(); }
             else if( ch == 4 ){ 출금(); }
             else if( ch == 5 ){   System.out.println("프로그램 종료"); break; }
-
         } // w end
     } // m end
 } // class end 
