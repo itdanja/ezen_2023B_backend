@@ -1,5 +1,6 @@
 package day10;
 
+
 import java.util.Scanner;
 
 public class BankApplication { // 실행클래스
