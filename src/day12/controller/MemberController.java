@@ -10,6 +10,7 @@ public class MemberController {
     private MemberController(){}
     private static MemberController memberController = new MemberController();
     public static MemberController getInstance(){ return memberController; }
+
     // 1. 회원가입 메소드
     public boolean signup( MemberDto memberDto ){
         System.out.println("[2] MemberController.signup");
@@ -38,6 +39,5 @@ public class MemberController {
         }
         return result;
     }
-
 
 }
