@@ -30,8 +30,12 @@ public class MainView {
             System.out.print("선택>");
             int ch = scanner.nextInt();
 
-            if( ch == 1 ){ } // 회원가입 페이지 이동
-            else if( ch == 2 ){ } // 로그인 페이지 이동
+            if( ch == 1 ){  // 회원가입 페이지 이동
+                MemberView.getInstance().signup();
+            }
+            else if( ch == 2 ){ // 로그인 페이지 이동
+
+            }
         }
 
     } // m e
