@@ -47,18 +47,15 @@ public class MemberView {
         MemberDto memberDto = new MemberDto();
         memberDto.setId( id );
         memberDto.setPw( pw );
-
         // 3. 컨트롤 에게 (로그인에 필요한 정보)전달 하고 결과(boolean) 받기
         boolean result = MemberController.getInstance().login( memberDto );
         System.out.println("[5] result = " + result);
-
         // 4. 결과에 따른 처리
         if( result ){
             System.out.println("안내] 로그인 성공");
             // 로그인 성공시 사용할 서비스의 view 로 이동.
         }
         else{   System.out.println("안내] 로그인 실패");    }
-
     } // f end
 }
 
