@@ -34,7 +34,7 @@ public class MainView {
                 MemberView.getInstance().signup();
             }
             else if( ch == 2 ){ // 로그인 페이지 이동
-
+                MemberView.getInstance().login();
             }
         }
 
