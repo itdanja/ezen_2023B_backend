@@ -19,9 +19,9 @@ public class SportCar extends Car {
         speed += 10;
     }
     // 2. final 있는 메소드이면 오버라이딩 불가능
-    @Override
-    public void stop(){
-        System.out.println("스포츠카를 멈춤");
-        speed = 0;
-    }
+//    @Override
+//    public void stop(){
+//        System.out.println("스포츠카를 멈춤");
+//        speed = 0;
+//    }
 }
