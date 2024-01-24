@@ -2,12 +2,39 @@ package day17;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Step3 {
+    /*
+     0. Class.forName("JDBC드라이버 클래스경로");
+        - 해당 클래스를 찾아서 JDBC드라이버 객체 (DriverManager) 자동 등록 한다.
 
+     1. [클래스] DriverManager
+        - 연동 성공하면 Connection 구현체(객체)를 반환한다.
+        1. 연동함수
+            DriverManager.getConnection("jdbc:mysql://ip번호:port번호/db명" , "계정명","비밀번호");
+            - ip번호 = localhost : 현재 pc 뜻.
+            - port번호 = mysql 3306 사용 권장.
+
+     2. [인터페이스] Connection
+        - Statement , PreparedStatement 구현 객체를 반환한다.
+        1. connection.prepareStatement( SQL );          SQL 서명/기재 된 PreparedStatement 구현체 반환한다.
+
+     3. [인터페이스] PreparedStatement
+        - DDL , DML 문을 실행 할때 사용한다.
+        1. 실행
+            1. insert , update , delete => .executeUpdate();
+            2. select                   => .executeQuery();
+
+     4. [인터페이스] ResultSet
+        - DB에서 가져온 데이터를 읽을때 사용한다.
+        1. 다음 레코드 이동                : .next()      : 다음레코드 이동 후 존재하면 true / 없으면 false 반환
+        2. 현재 레코드에서 필드 값 호출     : .get타입( 호출할 필드순서번호or필드명 );
+                                        .getString( ) : 문자타입 호출   , .getInt( ) : 정수타입 호출
+    */
     public static void main(String[] args) {
         // 입력 객체
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +65,21 @@ public class Step3 {
                     String sql = "insert into members values('"+name+"')";                                 System.out.println( sql );
                     connection.prepareStatement( sql ).executeUpdate();
                 }
-                else if( ch == 2 ){ }
+                else if( ch == 2 ){
+                    // 모든 필드(*) 를 표시하는 모든 레코드(where없이) 출력
+                    String sql ="select * from members";
+                    ResultSet resultSet = connection.prepareStatement( sql ).executeQuery();
+                        System.out.println( resultSet ); // select 결과물 가지고 있는 인터페이스
+                    // .next() : select 결과 테이블에서 다음 레코드로 이동후 존재여부 true/false 반환 함수
+                    while ( resultSet.next() ){ // 검색결과내 첫번째 레코드부터 마지막 레코드까지 순회.
+                        // 하나씩 next()로 레코드를 이동하면서 반복처리 만약에 다음레코드가 존재하면 실행.
+                        // 다음레코드가 존재하지 않으면 false 이므로 while 종료.
+
+                        // System.out.println( resultSet.getString(1) );
+                        System.out.println( resultSet.getString("name") );
+                            // .get타입( 호출 필드순서번호 or 필드명 );
+                    } // while end
+                }
                 else if( ch == 3 ){
                     // 1. 입력받기    // 누구를 // 어떻게 수정할껀지 입력
                     System.out.print("수정할 고객명 : "); String oldName = scanner.next();
@@ -64,4 +105,19 @@ public class Step3 {
 
         } // while e
     } // main e
-} // class e 
+} // class e
+
+/*
+
+                        ResultSet : 인터페이스   ----------> select 결과물( 표 )
+                            null                            name      age
+                                                            유재석     30
+                                                            강호동     25
+
+System.out.println( resultSet.next() );   // 신동엽 true
+                    System.out.println( resultSet.next() );   // 유재석 true
+                    System.out.println( resultSet.next() );   // false
+
+
+
+ */

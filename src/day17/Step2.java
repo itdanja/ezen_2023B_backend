@@ -34,6 +34,5 @@ public class Step2 {
         }
         catch ( ClassNotFoundException e ) { System.out.println(e); }
         catch ( SQLException e ){  System.out.println(e);  }
-
     }
 }
