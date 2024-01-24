@@ -11,22 +11,21 @@ public class Step1 {
 
             Class.forName("com.mysql.cj.jdbc.Driver"); // ClassNotFoundException
 
-        }catch ( ClassNotFoundException e ){
-            System.out.println("[시스템오류] : JDBC 드라이버 클래스를 찾지 못했습니다..");
+        }catch ( ClassNotFoundException e ){ // 예외 클래스 정보를 매개변수를 받는다.
+            System.out.println("[시스템오류] : JDBC 드라이버 클래스를 찾지 못했습니다.." + e );
         }
 
-        try{ // 만약에 해당 연동할 db서버의 정보가 잘못되거나 db서버쪽에 문제가 발생했을때 대처
+        try{ // 만약에 해당 db서버의 연동 정보가 잘못되거나 db서버쪽에 문제가 등등 발생했을때 대처
 
             Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/test5" ,
-                    "root" ,
-                    "1234");
+                    "jdbc:mysql://localhost:3306/test5" ,    // 1. DB서버주소( jdbc:mysql://ip주소:port번호/DB명 )
+                    "root" ,                                    // 2. DB서버 계정명
+                    "1234");                                    // 3. DB서버 계정 비밀번호
             System.out.println("[시스템정보] : DB서버와 연동 성공했습니다.");
 
         }catch ( SQLException e ){
-            System.out.println("[시스템오류] : MYSQL서버와 연동이 실패 했습니다. ");
+            System.out.println("[시스템오류] : MYSQL서버와 연동이 실패 했습니다. " + e );
         }
-
     } // me
 } // cs
 
@@ -38,22 +37,21 @@ public class Step1 {
             - 자바 외부와 통신하는 클래스들 ( 키보드 , db서버 , 파일처리 등등 )
             - 1. Scanner클래스
             - 2. DAO( Data Access Object ) : 주로 DB연동/조작 객체
+
         2.실행예외 : 실행중에 예외 체크     = 실행중에 예외/오류 발생
             - 미리 대처하기 힘듬 - 미리 예외/오류 알고 있는상태 = 경험을 통한 대처
 
     예외/오류 처리
         - 만약에 예외가 발생할것 같은 코드에 처리
         - 문법
-            try{ } catch( 예외클래스명 변수 ){ }
+            try{ } catch( 예외클래스명 매개변수명 ){ }
 
 
-                      // 1. Class.forName() : 현재 프로젝트내 클래스 찾고 메모리로 로딩한다.
+         // 1. Class.forName() : 현재 프로젝트내 클래스 찾고 메모리로 로딩한다.
             Class.forName("com.mysql.cj.jdbc.Driver");
             // 1. MYSQL회사 driver 클래스를 찾기 : com 폴더내 mysql 폴더내 cj 폴더내 jdbc 폴더내 driver 존재
             // 2. 해당 폴더내 driver클래스를 찾는 과정에서 오류가 발생할수도 있다.
             // - ClassNotFoundException : 클래스를 찾지 못했다는 뜻.
-
-
 
         // 2. Connection : db연동 인터페이스
             // 인터페이스 타입으로 변수선언
