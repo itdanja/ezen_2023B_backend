@@ -21,7 +21,9 @@ public class MainView {
 
                 System.out.print("선택> "); int ch = scanner.nextInt();
 
-                if( ch == 1 ){ }
+                if( ch == 1 ){
+                    MemberView.getInstance().signup();
+                }
                 else if( ch == 2 ){ }
                 else {
                     System.out.println("<안내> 알수 없는 기능 번호 입니다.");

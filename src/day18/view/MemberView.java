@@ -12,7 +12,7 @@ public class MemberView {
     // 입력객체
     Scanner scanner = MainView.getInstance().scanner;
 
-    // 1. 회원가입
+    // 1. 회원가입 뷰
     public void signup(){
         // 1. 입력받기
         System.out.print("아이디 :");       String id = scanner.next();
