@@ -26,4 +26,43 @@ public class MemberController {
         // 2. 반환
         return result;
     }
+
+    // - 로그인 상태 필드. [ boolean 했다/안했다 , String 아이디/null , int 회원번호/0 , memberDto 객체/null ]
+    int loginMno = 0;
+
+    // 2-1. 로그인
+    public boolean login( MemberDto memberDto){
+        boolean result = false; // 반환 결과 기본값
+        // 1. dao에게 login 처리 요청하고 결과 받기.
+        result = MemberDao.getInstance().login( memberDto );
+        // 2. 만약에 login 성공이면 로그인상태 변경.
+        if( result ){
+            // 3. login 성공한 회원번호 dao 요청.
+            loginMno = MemberDao.getInstance().findMno(
+                        memberDto.getMid()
+                        );
+        }
+        return result;
+    } // m end
+
+    // 2-2 로그아웃
+    public void logout( ){
+        loginMno = 0; //
+    } // m end
+
 } // class e
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
