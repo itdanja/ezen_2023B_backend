@@ -36,22 +36,41 @@ public class MemberDao {
     public int signup(MemberDto memberDto ){
         try {
             // 1. SQL 작성 [ 변수가 들어갈 자리에는 ? 대체한다. ]
-            String sql = "insert into member( mid , mpw , mphone ) " +
-                    " values( ? , ? , ? ) ";
+            String sql = "insert into member( mid , mpw , mphone ) values( ? , ? , ? ) ";
             // 2. SQL 기재
             ps = conn.prepareStatement(sql);
-            // ? 매개변수 대입
-            ps.setString(1, memberDto.getMid());      // 기재된 SQL내 첫번째 ? 에 값 대입
-            ps.setString(2, memberDto.getMpw());     // 기재된 SQL내 두번째 ? 에 값 대입
-            ps.setString(3, memberDto.getMphone());  // 기재된 SQL내 세번째 ? 에 값 대입
+                // ? 매개변수 대입
+                ps.setString(1, memberDto.getMid());      // 기재된 SQL내 첫번째 ? 에 값 대입
+                ps.setString(2, memberDto.getMpw());     // 기재된 SQL내 두번째 ? 에 값 대입
+                ps.setString(3, memberDto.getMphone());  // 기재된 SQL내 세번째 ? 에 값 대입
             // 3. SQL 실행  // 4. SQL 결과
             int count = ps.executeUpdate(); // executeUpdate() 기재된 sql 실행하고 insert된 레코드 개수 반환.
             if (count == 1) {   return 0; } // 만약에 insert처리된 레코드가 1개이면 회원가입 성공
         }catch ( Exception e ){    System.out.println(e);    }
-
         // 5. 함수 종료
         return 1; // 실패
-    }
+    } // m end
+
+    // 2. 아이디 검사용( 아이디 중복검사 용도 )
+    public boolean idCheck( String mid ){
+        try {
+            // 1. SQL 작성한다.
+            String sql = "select mid from member where mid = ? ";
+            // 2. SQL 기재한다.
+            ps = conn.prepareStatement(sql);
+                // ? 매개변수 대입
+            ps.setString(1, mid); // sql문법내 첫번째 ?에 mid 변수 값 대입 ;
+            // 3. SQL 실행한다.
+            rs = ps.executeQuery(); // 질의/검색 (select) 결과를 rs 인터페이스 대입한다.
+            // 4. SQL 결과처리
+            if (rs.next()) {        // rs.next() : 검색 결과 테이블에서 다음레코드 이동. [ 다음레코드 이동후 존재하면 true , 존재하지 않으면 false ]
+                return true; // 중복 있음.
+            }
+        }catch ( Exception e ){  System.out.println(e);   }
+        // 5. 함수종료
+        return false; // 중복 없음
+
+    } // e end
 
 }
 

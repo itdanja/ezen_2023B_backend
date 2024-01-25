@@ -1,5 +1,6 @@
 package day18.view;
 
+import day18.controller.MemberController;
 import day18.model.dto.MemberDto;
 
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class MemberView {
         // 2. 객체화
         MemberDto memberDto = new MemberDto( id , pw , phone );
         // 3. 컨트롤러 에게 전달 후 결과
-        int result = 1; // 0 : 성공 , 1 : DB오류	2 : 아이디중복 3~ : 각 필드별 유효성섬사 실패
+        int result = MemberController.getInstance().signup( memberDto ); // 0 : 성공 , 1 : DB오류	2 : 아이디중복 3~ : 각 필드별 유효성섬사 실패
         // 4. 결과에 따른 출력
         if( result == 0 )     { System.out.println("<안내> 회원가입 성공 ");  }
         else if( result == 1 ){ System.out.println("<안내> 시스템 내부 오류 관리자에게 문의 ");  }

@@ -1,5 +1,6 @@
 package day18.controller;
 
+import day18.model.dao.MemberDao;
 import day18.model.dto.MemberDto;
 import day18.view.MemberView;
 
@@ -15,15 +16,14 @@ public class MemberController {
         int result = 0;
             // 3.가공처리/로직
                 // 1. 만약에 입력받은 아이디의 길이가 8글자 미만이면 실패.
-            if( memberDto.getMid().length() < 8 ){
-                return 3;
+            // if( memberDto.getMid().length() < 8 ){ return 3;  }
+                // 2. 아이디 중복검사 [ 입력받은 dto내 입력받은 아이디만 전달 ]
+            if( MemberDao.getInstance().idCheck( memberDto.getMid() ) ) {
+                return 2;
             }
-                // 2. 아이디 중복검사
-            if( true ){ return 2; }
                 // 3. 회원가입 요청
-            result = 0; // 샘플
+            result = MemberDao.getInstance().signup( memberDto ); // 샘플
         // 2. 반환
         return result;
     }
-
 } // class e
