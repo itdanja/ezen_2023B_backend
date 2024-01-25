@@ -38,9 +38,7 @@ public class MemberController {
         // 2. 만약에 login 성공이면 로그인상태 변경.
         if( result ){
             // 3. login 성공한 회원번호 dao 요청.
-            loginMno = MemberDao.getInstance().findMno(
-                        memberDto.getMid()
-                        );
+            loginMno = MemberDao.getInstance().findMno(  memberDto.getMid()   );
         }
         return result;
     } // m end
