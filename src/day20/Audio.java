@@ -29,4 +29,31 @@ public class Audio implements RemoteControl {
 
     // *디폴트[ default ] 인스턴스 메소드 는 재정의가 필수는 아니다.
 
-}
+    // 필드
+    private int memoryVolume; // 무음 처리시 볼륨 임시 저장.
+
+    // default 메소드 오버라이딩
+    @Override
+    public void setMute(boolean mute) {
+        if( mute ){
+            this.memoryVolume = this.volume;
+            System.out.println("무음 처리 합니다. ");
+            setVolume( RemoteControl.MIN_VOLUME );
+        }else {
+            System.out.println("무음 해제 합니다. ");
+            setVolume( this.memoryVolume );
+        }
+    } // method end
+} // class end
+
+
+
+
+
+
+
+
+
+
+
+

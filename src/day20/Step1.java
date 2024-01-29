@@ -16,5 +16,13 @@ public class Step1 {
         rc.setMute( true );
         rc.setMute( false );
 
+
+        // 4. 인터페이스의 정적 메소드 호출.
+        RemoteControl.changeBattery();
+
+        // rc.turnOff2();
+        // RemoteControl.turnOff3();
+
+
     } // m end
 } // class end
