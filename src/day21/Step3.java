@@ -18,7 +18,6 @@ public class Step3 {
         Tire tire = new Tire(){
             // ============ Tire 클래스로 부터 상속 받은 객체 정의 =========//
             // class 자식클래스명 extends  Tire{}
-                // !!!! : 자식객
             // 필드 생성 가능
             int a = 10;
             //생성자 X
