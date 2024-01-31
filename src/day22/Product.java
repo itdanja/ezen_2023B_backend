@@ -3,7 +3,6 @@ package day22;
 public class Product < K , M > {
         // class 클래스명 < 제네릭타입1 , 제네릭타입2 >
         // 제네릭타입명 : 임의로 가능하지만 주로 대문자 A~Z 사용된다.
-
     // 1.필드
     private K kind;
     private M model;
