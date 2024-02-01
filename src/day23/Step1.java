@@ -17,7 +17,11 @@ public class Step1 {
         // strArray[3] = "서장훈"; // ArrayIndexOutOfBoundsException
         System.out.println( "배열  상태 : " + Arrays.toString( strArray )  );
         System.out.println( "배열 요소 호출 : "+ strArray[1] );
+        System.out.println( "배열 길이 : " + strArray.length );
             //  Arrays.toString( 배열타입변수 ) : 해당 배열 상태 호출
+        strArray[1] = null; // 배열은 고정길이 이기때문에 삭제
+
+        System.out.println("=====================================");
 
         // 2. 클래스타입 : *컬렉션프레임워크( 수집관련라이브러리 제공 )
             // 객체{ 객체 , 객체 , 객체 }
@@ -31,25 +35,26 @@ public class Step1 {
         strList.add("서장훈");
         System.out.println( "리스트 상태 : " + strList );
         System.out.println( "리스트 요소 호출 : " + strList.get(1) );
+        System.out.println( "리스트 길이 : " + strList.size() );
+        strList.remove( 1 ); // 1번 인덱스 삭제
+        System.out.println( "1번 인덱스 삭제 후 리스트 상태 : " + strList );
 
-
+        System.out.println("=====================================");
         // 3. 가변길이배열객체 만들기.
         // SimpleList{  객체 , 객체 , 객체 }
         SimpleList<String> simpleList = new SimpleList<>();
         simpleList.add("유재석");
-        simpleList.add("신동엽");
+        simpleList.add("강호동");
         simpleList.add("신동엽");
         simpleList.add("서장훈");
         System.out.println( "리스트 상태 : " + simpleList );
         System.out.println( "리스트 요소 호출 :" + simpleList.get( 1 ) );
+        System.out.println( "리스트 길이 : " + simpleList.size() );
+        simpleList.remove( 1 );
+        System.out.println( "1번 인덱스 삭제 후 리스트 상태 : " + simpleList );
 
-        SimpleList<Integer> intList = new SimpleList<>();
-        intList.add( 100 );
-        intList.add( 200 );
-        intList.add( 300 );
-        intList.add( 400 );
-
-
-
+        // JS
+            // JS 배열: [ 값1, 값2 , 값3 ] => List
+            // JS 객체: { 필드 : 값 , 필드 : 값 , 필드 : 값 } => Map
     } //me
 } // ce
