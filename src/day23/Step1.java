@@ -1,7 +1,8 @@
 package day23;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import day14.Car;
+
+import java.util.*;
 
 public class Step1 {
 
@@ -41,7 +42,7 @@ public class Step1 {
 
         System.out.println("=====================================");
         // 3. 가변길이배열객체 만들기.
-        // SimpleList{  객체 , 객체 , 객체 }
+        // SimpleList[  객체 , 객체 , 객체 ]
         SimpleList<String> simpleList = new SimpleList<>();
         simpleList.add("유재석");
         simpleList.add("강호동");
@@ -53,8 +54,58 @@ public class Step1 {
         simpleList.remove( 1 );
         System.out.println( "1번 인덱스 삭제 후 리스트 상태 : " + simpleList );
 
+        /*
+
+        ArrayList< ArrayList<String> > list = new ArrayList<>();
+        // 클래스 <---> 타입 생성
+        [  [  ] , [ ] , [ ] , [ ] ]
+
+        ArrayList< HashMap< String ,String > > list = new ArrayList<>();
+        [  { JSON } , { JSON } , { JSON } , { JSON  } , { JSON } ]
+
+
+        입출력/프론트     ------ 데이터 통신 --------> 로직/백엔드
+        JS                                          JAVA
+                                                    컨트롤러/서비스 ---------------> DB
+        [ 값,값,값]                                  ArrayList                      SQL
+        { 속성명:값,속성명:값 }                        HashMap
+
+        [   { 속성명:값,속성명:값 } ,                  ArrayList< HashMap< String ,String > >
+            { 속성명:값,속성명:값 } ,
+            { 속성명:값,속성명:값 } ,
+            { 속성명:값,속성명:값 }
+        ]
+                                프레임워크
+                                + 스프링 프레임워크
+        */
+
         // JS
             // JS 배열: [ 값1, 값2 , 값3 ] => List
             // JS 객체: { 필드 : 값 , 필드 : 값 , 필드 : 값 } => Map
+
+        /*
+
+
+    1. - 제네릭을 이용한 ArrayList 구현   / JS :[ 값1, 값2 , 값3 ]
+    2. - 제네릭을 이용한 HashMap 구현  / JS : { 속성명 : 값 , 속성명  : 값 , 속성명 : 값 }
+        - 속성명은 중복 불가.
+        let object = {
+            name = "유재석",
+            age = 40
+        }
+        -  필수 메소드 구현
+            - add( v , k ) 		: key 와 value 매개변수로 전달.
+            - get( key ) ,		: key 매개변수로 전달해서 value 출력
+            - remove( index ) , 		: index 매개변수로 전달해서 해당 속성과값 삭제
+            - size() , 			: 속성 개수 출력
+		    - toString()		: { 속성명 : 값 , 속성명  : 값 , 속성명 :
+
+         */
+
+
     } //me
 } // ce
+
+
+
+
